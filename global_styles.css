@@ -1,0 +1,145 @@
+:root {
+    --notifBar-fontSize: 24px;
+    --notifBar-iconSize: 24px;
+    --notifBar-borderSideMargin: 8px;
+    --notifBar-borderTopMargin: 5px;
+
+    --menu-iconSize: 48px;
+    
+    --text-color: white;
+    --bar-color: black;
+
+    --grid-border: white;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: rgb(102, 102, 93);
+ 
+}
+
+header {
+    background-color: var(--bar-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+.notifBar li {
+    font-size: var(--notifBar-fontSize);
+    display: inline-block;
+    
+    & .time {
+        font-size: var(--notifBar-fontSize);
+        margin-top: var(--notifBar-borderTopMargin);
+    }
+    
+    & .wifi {
+        width: var(--notifBar-iconSize);
+        height: var(--notifBar-iconSize);
+        margin-top: var(--notifBar-borderTopMargin);
+        filter: invert(1);
+    }
+    
+    & .mobileData {
+        width: var(--notifBar-iconSize);
+        height: var(--notifBar-iconSize);
+        margin-top: var(--notifBar-borderTopMargin);
+        filter: invert(1);
+        
+    }
+
+    & .battery {
+        width: var(--notifBar-iconSize);
+        height: var(--notifBar-iconSize);
+        margin-top: var(--notifBar-borderTopMargin);
+        filter: invert(1);
+
+    }
+
+}
+
+.notifBar {
+    &.right {
+        margin-right: var(--notifBar-borderSideMargin);
+    }
+    &.left {
+        margin-left: var(--notifBar-borderSideMargin);
+        color: var(--text-color);
+    }
+}
+
+
+.grid {
+    display: grid;
+    grid-template-areas: 
+        "settings   browser   camera        gallery"
+        "clock      messages  fileExplorer  gps";
+
+    justify-items: center;
+    border-color: var(--grid-border);
+}
+
+.icon {
+    margin: 24px 8px 8px 8px;
+    padding: 12px;
+    width: var(--menu-iconSize);
+    height: var(--menu-iconSize);
+    background-color: blue;
+    border-radius: 8px;
+    cursor:pointer;
+
+    &.settings{grid-area: settings;}
+
+    &.browser{grid-area: browser;}
+
+    &.camera{grid-area: camera;}
+
+    &.gallery{grid-area: gallery;}
+
+    &.clock{grid-area: clock;}
+
+    &.messages{grid-area: messages;}
+
+    &.fileExplorer{grid-area: fileExplorer;}
+
+    &.gps{grid-area: gps;}
+}
+
+footer {
+    background-color: var(--bar-color);
+    display: flex;
+    margin-top: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 111.7%;
+}
+
+.button {
+    padding: 2px 15px 5px 15px;
+    filter: invert(1);
+    cursor:pointer;
+
+    &.tabs {
+        width: var(--notifBar-iconSize);
+        height: var(--notifBar-iconSize);
+    }
+    &.home {
+        width: var(--notifBar-iconSize);
+        height: var(--notifBar-iconSize);
+    }
+    &.back {
+        width: var(--notifBar-iconSize);
+        height: var(--notifBar-iconSize);
+    }
+}
